@@ -1,0 +1,14 @@
+
+
+
+class testMain{
+  public static void main(String [] args){
+		try {
+			HTTP_URL_JSON_Test weather = new HTTP_URL_JSON_Test();
+		}catch(Exception E){
+			E.printStackTrace();
+		}
+
+		System.out.println("weather")
+		;   }
+}
