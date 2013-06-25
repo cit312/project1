@@ -1,0 +1,39 @@
+
+public class text {
+/*
+  {data=
+		{current_condition=
+		[{cloudcover=0
+		, observation_time=06:16 PM
+		, pressure=1016
+		, temp_C=19
+		, visibility=16
+		, temp_F=67
+		, windspeedMiles=13
+		, precipMM=0.0
+		, winddir16Point=SSW
+		, winddirDegree=200
+		, weatherIconUrl= [{value=http://cdn.worldweatheronline.net/images/wsymbols01_png_64/wsymbol_0001_sunny.png}]
+		, humidity=44
+		, windspeedKmph=20
+		, weatherCode=113
+		, weatherDesc=[{value=Sunny}]}]
+	, request=[{query=83440, type=Zipcode}]
+	, weather=	[{windspeedMiles=19
+				, winddirection=SW
+				, date=2013-06-25
+				, precipMM=2.4
+				, winddir16Point=SW
+				, winddirDegree=220
+				, weatherIconUrl=
+					[{value=http://cdn.worldweatheronline.net/images/wsymbols01_png_64/wsymbol_0001_sunny.png}]
+					, tempMinC=10, windspeedKmph=31
+					, tempMaxC=23, weatherCode=113, tempMaxF=73, tempMinF=50, weatherDesc=
+						[{value=Sunny}]}]}}
+			}
+		}
+		}
+		}
+	}  
+	*/
+}
