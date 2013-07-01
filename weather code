@@ -23,15 +23,14 @@ public class HTTP_URL_JSON_Test {
 	
 public	HTTP_URL_JSON_Test(){
 		
-		String currentcondition = "";
+	// creating URL to a string	
 		
-		
-		String url = "http://api.worldweatheronline.com/free/v1/weather.ashx?q=83440&format=json&num_of_days=1&date=today&key=fqdenqevfzd2bdd53bcw4pp3";
+		String url = "http://api.worldweatheronline.com/free/v1/weather.ashx?q=83440&format=json&num_of_days=5&date=today&key=fqdenqevfzd2bdd53bcw4pp3";
 		String json = new String();
 
 		int timeout = 500;
 		int status;
-
+     //calls the url from the string and creates a connection
 		try {
 			URL u = new URL(url);
 			HttpURLConnection c = (HttpURLConnection) u.openConnection();
@@ -46,17 +45,70 @@ public	HTTP_URL_JSON_Test(){
 			//second level hash
 			HashMap secondlvl = new HashMap();
 			secondlvl = (HashMap) amap.get("data");
-			
-			//third level array casted into a hash
+		//Today
+		System.out.println("Today: ");
+		
+		//third level array casted into a hash
 			ArrayList thirdlvl = (java.util.ArrayList) secondlvl.get("current_condition");
 			HashMap weathercondition = (HashMap) thirdlvl.get(0);
 		
-			System.out.println(weathercondition.get("temp_F") + " °F");
-			System.out.println(weathercondition.get("windspeedMiles") +" MPH Windspeed");
-			
-			
-		}
+			System.out.println("Temperature: " + weathercondition.get("temp_F") + "°F");
+			System.out.println("Wind Speed: " + weathercondition.get("windspeedMiles") + " mph");
+			System.out.println("Cloud Cover: " + weathercondition.get("cloudcover"));
+			System.out.println("Precipitation: " + weathercondition.get("precipMM"));
 		
+		//Day 2
+		System.out.println("");	
+		System.out.println("Day 2:");	
+		
+		ArrayList weatherArray = (ArrayList) secondlvl.get("weather");
+			
+			HashMap two = (HashMap) weatherArray.get(1);
+			
+			System.out.println(two.get("date"));
+			System.out.println("Max Temp: " + two.get("tempMaxF") + "°F");
+			System.out.println("Wind Speed: " + two.get("windspeedMiles")+ " mph");
+		
+		//weather description
+             
+			
+			         
+			
+		//Day 3
+			System.out.println("");	
+			System.out.println("Day 3:");
+
+			//array weather.Array has been created previous in Day 2
+			//so I am calling it a second time
+
+		    HashMap three = (HashMap) weatherArray.get(2);
+	    
+		    System.out.println(two.get("date"));
+			System.out.println("Max Temp: " + three.get("tempMaxF") + "°F");
+			System.out.println("Wind Speed: " + three.get("windspeedMiles")+ " mph");
+			
+			//Day 4
+			System.out.println("");	
+			System.out.println("Day 4:");
+			
+			HashMap four = (HashMap) weatherArray.get(3);
+			
+			System.out.println(two.get("date"));
+			System.out.println("Max Temp: " + four.get("tempMaxF") + "°F");
+			System.out.println("Wind Speed: " + four.get("windspeedMiles")+ " mph");
+	// Day 5
+			
+			System.out.println("");	
+			System.out.println("Day 5:");
+			
+			HashMap five = (HashMap) weatherArray.get(4);
+	
+			System.out.println(five.get("date"));
+			System.out.println("Max Temp: " + five.get("tempMaxF") + "°F");
+			System.out.println("Wind Speed: " + five.get("windspeedMiles")+ " mph");
+	
+		
+		}
 		
 		
 		catch (MalformedURLException e) {
