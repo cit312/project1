@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -57,58 +58,20 @@ public	HTTP_URL_JSON_Test(){
 			System.out.println("Cloud Cover: " + weathercondition.get("cloudcover"));
 			System.out.println("Precipitation: " + weathercondition.get("precipMM"));
 		
-		//Day 2
-		System.out.println("");	
-		System.out.println("Day 2:");	
+			//weather loop to go through the weather array and pick out each
+			// hashmap date
 		
-		ArrayList weatherArray = (ArrayList) secondlvl.get("weather");
-			
-			HashMap two = (HashMap) weatherArray.get(1);
-			
-			System.out.println(two.get("date"));
-			System.out.println("Max Temp: " + two.get("tempMaxF") + "°F");
-			System.out.println("Wind Speed: " + two.get("windspeedMiles")+ " mph");
-		
-		//weather description
-             
-			
-			         
-			
-		//Day 3
-			System.out.println("");	
-			System.out.println("Day 3:");
-
-			//array weather.Array has been created previous in Day 2
-			//so I am calling it a second time
-
-		    HashMap three = (HashMap) weatherArray.get(2);
-	    
-		    System.out.println(two.get("date"));
-			System.out.println("Max Temp: " + three.get("tempMaxF") + "°F");
-			System.out.println("Wind Speed: " + three.get("windspeedMiles")+ " mph");
-			
-			//Day 4
-			System.out.println("");	
-			System.out.println("Day 4:");
-			
-			HashMap four = (HashMap) weatherArray.get(3);
-			
-			System.out.println(two.get("date"));
-			System.out.println("Max Temp: " + four.get("tempMaxF") + "°F");
-			System.out.println("Wind Speed: " + four.get("windspeedMiles")+ " mph");
-	// Day 5
-			
-			System.out.println("");	
-			System.out.println("Day 5:");
-			
-			HashMap five = (HashMap) weatherArray.get(4);
-	
-			System.out.println(five.get("date"));
-			System.out.println("Max Temp: " + five.get("tempMaxF") + "°F");
-			System.out.println("Wind Speed: " + five.get("windspeedMiles")+ " mph");
-	
-		
-		}
+			ArrayList weatherArray = (ArrayList) secondlvl.get("weather");
+					
+			for (int i = 1; i < weatherArray.size(); i ++){
+				HashMap three = (HashMap) weatherArray.get(i);
+			    
+			    System.out.println(three.get("date"));
+				System.out.println("Max Temp: " + three.get("tempMaxF") + "°F");
+				System.out.println("Wind Speed: " + three.get("windspeedMiles")+ " mph");
+				
+			}
+			}
 		
 		
 		catch (MalformedURLException e) {
